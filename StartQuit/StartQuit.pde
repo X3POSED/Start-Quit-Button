@@ -6,7 +6,10 @@ void setup() {
 //
 void draw() 
 {
- if (  noNowReallyStart==true ) background(0); //Night Mode not considered yet
+ if (  noNowReallyStart==true ) { //Actual start IF
+ background(0); //Night Mode not considered yet
+ rect(); //Quit Button
+  }//End If-Start
 } //End Draw
 //
 void keyPressed() 
