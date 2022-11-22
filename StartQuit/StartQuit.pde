@@ -13,6 +13,11 @@ void keyPressed()
 { 
   //
   if ( key==' ' && start==true ) noNowReallyStart = true;
+  //
+  //Prototype Key Board Quit Button OR shortcut
+  if ( key=='1' ) exit();
+  if ( keyCode == ESC ) exit();
+  //
 } //End KeyPressed
 //
 void mousePressed() 
