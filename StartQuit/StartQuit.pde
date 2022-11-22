@@ -6,7 +6,7 @@ void setup() {
 //
 void draw() 
 {
-  background(0); //Night Mode not considered yet
+ if ( start==true ) background(0); //Night Mode not considered yet
 } //End Draw
 //
 void keyPressed() {
