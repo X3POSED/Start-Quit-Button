@@ -6,19 +6,15 @@ color quitButtonColour, yellow=#FFFF00 , purple=#FF00FF ;
 //
 void setup()
 {
-  //Display & ALgorithms not considered yet
   size (400, 300); //Landscape
   //fullScreen(); //displayWidth, displayHeight
+  displayOrientation();
   appWidth = width; 
   appHeight = height;
+  population();
   //
-  //Population
-  float centerX = appWidth * 1/2; //Point
-  float centerY = appHeight * 1/2; //Point
-  quitButtonX = centerX - ( appWidth * 1/4 );
-  quitButtonY = centerY - ( appHeight * 1/4 );
-  quitButtonWidth = appWidth * 1/2; //Line not point, thus use formula
-  quitButtonHeight = appHeight * 1/2; //Line not point, thus use formula
+  //
+  
 } //End setup
 //
 void draw()
@@ -33,9 +29,10 @@ void draw()
     //Quit Button Hover Over Feature
     if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) {
       quitButtonColour = yellow; //Remember Knight Mode
-      //HINT: QuitButtonWorks Boolean here, if true, would only work if the mouse hovered over the logical rectangle
+      //HINT logical rect: QuitButtonWorks-Boolean TRUE, here
     } else {
       quitButtonColour = purple; //Remember Day Mode
+      //HINT logical rect: QuitButtonWorks-Boolean FALSE, here
     } //End Hover Over
     //
     fill(quitButtonColour);
