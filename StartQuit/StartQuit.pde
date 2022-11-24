@@ -2,7 +2,7 @@
 int appWidth, appHeight;
 Boolean start=false, noNowReallyStart=false;
 float quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight;
-color quitButtonColour, yellow=#FFFF00 , purple=#FF00FF ;
+color quitButtonColour, yellow=#FFFF00, purple=#FF00FF ;
 //
 void setup()
 {
@@ -12,52 +12,27 @@ void setup()
   appWidth = width; 
   appHeight = height;
   population();
-  //
-  //
-  
 } //End setup
 //
 void draw()
 {
   if ( noNowReallyStart==true ) { //Actual start IF
-    background(0); //Night Mode not considered yet
-    //
-    //Logical Rectangle
-    println("X-Value", quitButtonX, mouseX, quitButtonX+quitButtonWidth );
-    println("Y-Value", quitButtonY, mouseY, quitButtonY+quitButtonHeight);
-    //
-    //Quit Button Hover Over Feature
-    if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) {
-      quitButtonColour = yellow; //Remember Knight Mode
-      //HINT logical rect: QuitButtonWorks-Boolean TRUE, here
-    } else {
-      quitButtonColour = purple; //Remember Day Mode
-      //HINT logical rect: QuitButtonWorks-Boolean FALSE, here
-    } //End Hover Over
-    //
-    fill(quitButtonColour);
-    rect( quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight ); //Quit Button
+    programDraw();
   } //End IF-STart
-  //
 } //End draw
 //
 void keyPressed()
 {
-  //
+  //User Initiate Start Screen
   if ( key==' ' && start==true ) noNowReallyStart = true;
   //
-  //Prototype Key Board Quit Button OR shortcut
-  if ( key=='Q' || key=='q' ) exit();
-  if ( keyCode == ESC ) exit();
+  keyBoardShortCuts();
   //
 } //End keyPressed
 //
 void mousePressed()
 {
-  //
-  //OS Level Start Button
-  start = true;
-  println("To Start, Press the Space Bar");
+  OS_Start();
   //
   //Quit Button: Logical Rectangle, see println in draw()
   if ( mouseX>quitButtonX && mouseX<quitButtonX+quitButtonWidth && mouseY>quitButtonY && mouseY<quitButtonY+quitButtonHeight ) exit();
